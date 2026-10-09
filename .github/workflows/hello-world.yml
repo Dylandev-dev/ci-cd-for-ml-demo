@@ -1,0 +1,13 @@
+name: CI
+on: 
+  push:
+    branches: ['main']
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+  steps:
+    - name: Run  a multi-ligne script
+    run: |
+      echo "hello   , world !"
+      echo "Add  other  actions  to  build"
