@@ -1,13 +1,21 @@
-name: CI
+name: PR
 on: 
-  push:
+  pull_request: 
     branches: ['main']
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Run  a multi-ligne script
+    - name: checkout
+      uses: actions/checkout@v3
+    - name: Setup  python
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.9
+    - name: Run  python  script
       run: |
-       echo "hello   , world !"
-       echo "Add  other  actions  to  build"
+       echo hello_world.py
+       python3 hello_world.py
+
+       
